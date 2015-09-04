@@ -1,0 +1,20 @@
+- average coverage: 273.352
+  average read length: 86.1526
+  insert size deviation: 0
+  insert size distribution:
+    {}
+  insert size left quantile: 0
+  insert size mad: 0
+  insert size mean: 0
+  insert size median: 0
+  insert size right quantile: 0
+  left reads:
+    - /cluster/project8/vyp/sofia/IlluMeta_new/exec/SPAdes-3.5.0-Linux/bin/spades_test/corrected/ecoli_1K_1.fq.00.0_0.cor.fastq.gz
+  orientation: fr
+  pi threshold: 0
+  read length: 100
+  right reads:
+    - /cluster/project8/vyp/sofia/IlluMeta_new/exec/SPAdes-3.5.0-Linux/bin/spades_test/corrected/ecoli_1K_2.fq.00.0_0.cor.fastq.gz
+  single reads:
+    - /cluster/project8/vyp/sofia/IlluMeta_new/exec/SPAdes-3.5.0-Linux/bin/spades_test/corrected/ecoli_1K__unpaired.00.0_0.cor.fastq.gz
+  type: paired-end

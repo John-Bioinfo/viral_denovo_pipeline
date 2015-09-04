@@ -1,0 +1,10 @@
+#!/usr/bin/env /home/ucbtsmo/Projects/viral_denovo_pipeline/exec/python-2.7.6/bin/python
+import sys
+
+try:
+	import _preamble
+except ImportError:
+	pass
+
+from cutadapt.scripts import cutadapt
+cutadapt.main()

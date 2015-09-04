@@ -1,0 +1,235 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ALPHA	pear-flip.c	12;"	d	file:
+ARGS_H	args.h	2;"	d
+ASYNC_H	async.h	2;"	d
+BETA	pear-flip.c	13;"	d	file:
+CONTACT	pear.h	8;"	d
+DisplayInstance	pear-pt.c	/^DisplayInstance (struct user_args * sw)$/;"	f
+EMP_H	emp.h	2;"	d
+LICENCE	pear.h	7;"	d
+MAX_READ_SIZE	pear-flip.c	14;"	d	file:
+PHRED_INIT	pear-flip.c	15;"	d	file:
+PHRED_INIT	pear-pt.c	14;"	d	file:
+PHRED_INIT	pear.c	14;"	d	file:
+PROGRAM_NAME	pear.h	4;"	d
+PROGRAM_VERSION	pear.h	5;"	d
+READER_H	reader.h	2;"	d
+READ_SIZE	reader.c	8;"	d	file:
+THREAD_MIN_PACKET_SIZE	pear-pt.c	15;"	d	file:
+THREAD_PACKET_SIZE_DELTA	pear-pt.c	16;"	d	file:
+VERSION_DATE	pear.h	6;"	d
+_PEAR_	pear.h	2;"	d
+assemble_overlap	pear-flip.c	/^assemble_overlap (struct read_t * left, struct read_t * right, int base_left, int base_right, int ol_size, struct read_t * ai)$/;"	f
+assemble_overlap	pear-pt.c	/^assemble_overlap (struct read_t * left, struct read_t * right, int base_left, int base_right, int ol_size, struct read_t * ai)$/;"	f
+assemble_overlap	pear.c	/^assemble_overlap (struct read_t * left, struct read_t * right, int base_left, int base_right, int ol_size, struct read_t * ai)$/;"	f
+assembly	pear-flip.c	/^assembly (struct read_t * left, struct read_t * right, int match_score, int mismatch_score, struct user_args  * sw)$/;"	f
+assembly	pear-pt.c	/^assembly (struct read_t * left, struct read_t * right, int match_score, int mismatch_score, struct user_args  * sw)$/;"	f
+assembly	pear.c	/^assembly (struct read_t * left, struct read_t * right, int match_score, int mismatch_score, struct user_args  * sw)$/;"	f
+assembly_ef	pear-flip.c	/^assembly_ef (struct read_t * left, struct read_t * right, int match_score, int mismatch_score, struct emp_freq * ef, struct user_args  * sw)$/;"	f
+assembly_ef	pear-pt.c	/^assembly_ef (struct read_t * left, struct read_t * right, int match_score, int mismatch_score, struct emp_freq * ef, struct user_args  * sw)$/;"	f
+assembly_ef	pear.c	/^assembly_ef (struct read_t * left, struct read_t * right, int match_score, int mismatch_score, struct emp_freq * ef, struct user_args  * sw)$/;"	f
+assign_reads	pear-pt.c	/^inline int assign_reads (struct blockinfo_t * block, struct thread_local_t * thr_local)$/;"	f
+block	async.h	/^   struct blockinfo_t * block; \/**< @brief Block on which the current thread operates *\/$/;"	m	struct:thread_local_t	typeref:struct:thread_local_t::blockinfo_t
+block_t	reader.h	/^struct block_t$/;"	s
+blockinfo_t	async.h	/^struct blockinfo_t$/;"	s
+cnt_error	pear-flip.c	/^   int          cnt_error;$/;"	m	struct:dp_matrix	file:
+cnt_match	pear-flip.c	/^   int          cnt_match;$/;"	m	struct:dp_matrix	file:
+comp_mem	reader.c	/^void comp_mem (size_t memsize, size_t * reads_count, size_t * rawdata_size)$/;"	f
+cs_mutex_cond	pear-pt.c	/^static pthread_cond_t  cs_mutex_cond = PTHREAD_COND_INITIALIZER;$/;"	v	file:
+cs_mutex_io	pear-pt.c	/^static pthread_mutex_t cs_mutex_io   = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+cs_mutex_out	pear-pt.c	/^static pthread_mutex_t cs_mutex_out  = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+cs_mutex_wnd	pear-pt.c	/^static pthread_mutex_t cs_mutex_wnd  = PTHREAD_MUTEX_INITIALIZER;$/;"	v	file:
+data	reader.h	/^   char * data;    \/**< @brief Read sequence *\/$/;"	m	struct:read_t
+db_get_next_reads	reader.c	/^int db_get_next_reads (struct block_t * fwd_block, struct block_t * rev_block, struct block_t * old_fwd_block, struct block_t * old_rev_block)$/;"	f
+db_read_fastq_block	reader.c	/^int db_read_fastq_block (struct block_t * block, FILE * fp, struct block_t * old_block)$/;"	f
+decode_switches	args.c	/^int decode_switches (int argc, char * argv[], struct user_args * sw)$/;"	f
+destroy_reader	reader.c	/^destroy_reader (void)$/;"	f
+destroy_thr_global	pear-pt.c	/^void destroy_thr_global (void)$/;"	f
+do_cpuid	reader.c	/^do_cpuid(uint32_t selector, uint32_t *data)$/;"	f	file:
+dp_matrix	pear-flip.c	/^struct dp_matrix$/;"	s	file:
+ef	async.h	/^   struct emp_freq * ef;       \/**< @brief Empirical frequencies *\/$/;"	m	struct:thread_local_t	typeref:struct:thread_local_t::emp_freq
+emp_entry_point	pear-pt.c	/^void * emp_entry_point (void * data)$/;"	f
+emp_freq	emp.h	/^struct emp_freq$/;"	s
+emp_freqs	args.h	/^   int          emp_freqs;    \/**< @brief Flag whether to compute\/use empirical base frequencies *\/$/;"	m	struct:user_args
+end	async.h	/^   unsigned int end;           \/**< @brief Number of the last read to be processed by current thread *\/$/;"	m	struct:thread_local_t
+entry_point	pear-pt.c	/^void * entry_point (void * data)$/;"	f
+entry_point_ef	pear-pt.c	/^void * entry_point_ef (void * data)$/;"	f
+eof1	reader.c	/^static int eof1 = 1, eof2 = 1;$/;"	v	file:
+eof2	reader.c	/^static int eof1 = 1, eof2 = 1;$/;"	v	file:
+fastq_left	args.h	/^   char       * fastq_left;   \/**< @brief Forward pairend FASTQ filename *\/$/;"	m	struct:user_args
+fastq_right	args.h	/^   char       * fastq_right;  \/**< @brief Reverse pairend FASTQ filename *\/$/;"	m	struct:user_args
+fd	async.h	/^   FILE * fd[4];                \/**< @brief Pointers to the 4 output files *\/$/;"	m	struct:thread_global_t
+finish	async.h	/^   int finish;                  \/**< @brief Trigger to denote that we read everything from the files *\/$/;"	m	struct:thread_global_t
+flip_list	pear-pt.c	/^void flip_list (void)$/;"	f
+fp1	reader.c	/^static FILE * fp1;$/;"	v	file:
+fp2	reader.c	/^static FILE * fp2;$/;"	v	file:
+freqa	emp.h	/^   int freqa;   \/**< @brief Frequency of A *\/$/;"	m	struct:emp_freq
+freqc	emp.h	/^   int freqc;   \/**< @brief Frequency of C *\/$/;"	m	struct:emp_freq
+freqg	emp.h	/^   int freqg;   \/**< @brief Frequency of G *\/$/;"	m	struct:emp_freq
+freqn	emp.h	/^   int freqn;   \/**< @brief Frequency of N *\/$/;"	m	struct:emp_freq
+freqt	emp.h	/^   int freqt;   \/**< @brief Frequency of T *\/$/;"	m	struct:emp_freq
+fwd	async.h	/^   struct block_t * fwd;    \/**< @brief Pointer to the forwards reads block *\/$/;"	m	struct:blockinfo_t	typeref:struct:blockinfo_t::block_t
+geom_mean	args.h	/^   double       geom_mean;    \/**< @brief Geometric mean *\/$/;"	m	struct:user_args
+get_next_reads	reader.c	/^int get_next_reads (struct block_t * fwd_block, struct block_t * rev_block)$/;"	f
+header	reader.h	/^   char * header;  \/**< @brief Read header *\/$/;"	m	struct:read_t
+id	async.h	/^   int id;                     \/**< @brief Thread id *\/$/;"	m	struct:thread_local_t
+init_fastq_reader	reader.c	/^init_fastq_reader (const char * file1, const char * file2, size_t memsize, struct block_t * fwd, struct block_t * rev)$/;"	f
+init_fastq_reader_double_buffer	reader.c	/^void init_fastq_reader_double_buffer (const char * file1, const char * file2, size_t memsize, struct block_t * pri_fwd, struct block_t * pri_rev, $/;"	f
+init_files	pear-pt.c	/^init_files (struct user_args * sw)$/;"	f
+init_scores	pear-flip.c	/^void init_scores (int match, int mismatch, struct emp_freq * ef)$/;"	f
+init_scores	pear-pt.c	/^void init_scores (int match, int mismatch, struct emp_freq * ef)$/;"	f
+init_scores	pear.c	/^void init_scores (int match, int mismatch, struct emp_freq * ef)$/;"	f
+init_thr_global	pear-pt.c	/^void init_thr_global (void)$/;"	f
+io_thread	async.h	/^   int io_thread;               \/**< @brief Trigger to denote which thread should read the next content of files in \\a yblock, otherwise -1 *\/ $/;"	m	struct:thread_global_t
+long_options	args.c	/^static struct option long_options[] =$/;"	v	typeref:struct:option	file:
+main	pear-flip.c	/^main (int argc, char * argv[])$/;"	f
+main	pear-pt.c	/^main (int argc, char * argv[])$/;"	f
+main	pear.c	/^main (int argc, char * argv[])$/;"	f
+makefilename	pear-flip.c	/^makefilename (const char * prefix, const char * suffix)$/;"	f
+makefilename	pear-pt.c	/^makefilename (const char * prefix, const char * suffix)$/;"	f
+makefilename	pear.c	/^makefilename (const char * prefix, const char * suffix)$/;"	f
+match_score	async.h	/^   int match_score;            \/**< @brief Match score *\/$/;"	m	struct:thread_local_t
+match_score	pear-flip.c	/^int match_score    = 1;$/;"	v
+match_score	pear-pt.c	/^int match_score    = 1;$/;"	v
+match_score	pear.c	/^int match_score    = 1;$/;"	v
+max_asm_len	args.h	/^   int          max_asm_len;  \/**< @brief Maximum assembly length threshold *\/$/;"	m	struct:user_args
+max_reads_count	reader.h	/^   unsigned int max_reads_count;  \/**< @brief Number of complete reads parsed from rawdata *\/$/;"	m	struct:block_t
+max_uncalled	args.h	/^   double       max_uncalled; \/**< @brief Maximum proportion of uncalled bases (N) *\/$/;"	m	struct:user_args
+memory	args.h	/^   size_t       memory;       \/**< @brief Amount of memory to be used *\/$/;"	m	struct:user_args
+mempool	reader.c	/^static char * mempool;$/;"	v	file:
+min_asm_len	args.h	/^   int          min_asm_len;  \/**< @brief Minimum assembly length threshold *\/$/;"	m	struct:user_args
+min_overlap	args.h	/^   int          min_overlap;  \/**< @brief Minimum overlap threshold *\/$/;"	m	struct:user_args
+min_trim_len	args.h	/^   int          min_trim_len; \/**< @brief Minimum trim length *\/$/;"	m	struct:user_args
+mismatch_score	async.h	/^   int mismatch_score;         \/**< @brief Mismatch score *\/$/;"	m	struct:thread_local_t
+mismatch_score	pear-flip.c	/^int mismatch_score = 1;$/;"	v
+mismatch_score	pear-pt.c	/^int mismatch_score = 1;$/;"	v
+mismatch_score	pear.c	/^int mismatch_score = 1;$/;"	v
+mstrcpl	pear-flip.c	/^void mstrcpl (char * s)$/;"	f
+mstrcpl	pear-pt.c	/^void mstrcpl (char * s)$/;"	f
+mstrcpl	pear.c	/^void mstrcpl (char * s)$/;"	f
+mstrrev	pear-flip.c	/^void mstrrev (char * s)$/;"	f
+mstrrev	pear-pt.c	/^void mstrrev (char * s)$/;"	f
+mstrrev	pear.c	/^void mstrrev (char * s)$/;"	f
+outfile	args.h	/^   char       * outfile;      \/**< @brief Output filename to use *\/$/;"	m	struct:user_args
+p_value	args.h	/^   double       p_value;      \/**< @brief P-value to use *\/$/;"	m	struct:user_args
+pa	emp.h	/^   double pa;   \/**< @brief \\a freqa \/ total *\/$/;"	m	struct:emp_freq
+parse_block	reader.c	/^parse_block (struct block_t * block)$/;"	f
+pc	emp.h	/^   double pc;   \/**< @brief \\a freqc \/ total *\/$/;"	m	struct:emp_freq
+pg	emp.h	/^   double pg;   \/**< @brief \\a freqg \/ total *\/$/;"	m	struct:emp_freq
+phred_base	args.h	/^   int          phred_base;   \/**< @brief Base Phred quality score, i.e. 33 or 64 *\/$/;"	m	struct:user_args
+precomp2_0001	pvalue.h	/^double precomp2_0001[100][100] = $/;"	v
+precomp2_001	pvalue.h	/^double precomp2_001[100][100] = $/;"	v
+precomp2_01	pvalue.h	/^double precomp2_01[100][100] = $/;"	v
+precomp2_05	pvalue.h	/^double precomp2_05[100][100] = $/;"	v
+precomp_0001	pvalue.h	/^double precomp_0001[100][100] = $/;"	v
+precomp_001	pvalue.h	/^double precomp_001[100][100] = $/;"	v
+precomp_01	pvalue.h	/^double precomp_01[100][100] = $/;"	v
+precomp_05	pvalue.h	/^double precomp_05[100][100] = $/;"	v
+print_number	reader.c	/^void print_number (size_t x)$/;"	f
+print_reads	reader.c	/^void print_reads (struct read_t ** fwd, struct read_t ** rev, int elms)$/;"	f
+processed	async.h	/^   unsigned int processed;  \/**< @brief Number of so far processed reads *\/$/;"	m	struct:blockinfo_t
+pt	emp.h	/^   double pt;   \/**< @brief \\a freqt \/ total *\/$/;"	m	struct:emp_freq
+q	emp.h	/^   double q;    \/**< @brief \\a freqa * \\a freqa + \\a freqc * \\a freqc + \\a freqg * \\a freqg + \\a freqt * \\a freqt *\/$/;"	m	struct:emp_freq
+qs_mul	pear-flip.c	/^double qs_mul[256][256];$/;"	v
+qs_mul	pear.c	/^double     qs_mul[256][256];$/;"	v
+qscore	reader.h	/^   char * qscore;  \/**< @brief Quality scores of sequence *\/$/;"	m	struct:read_t
+qual_thres	args.h	/^   int          qual_thres;   \/**< @brief Quality score threshold *\/$/;"	m	struct:user_args
+rawdata	reader.h	/^   char * rawdata;                \/**< @brief Raw data read from file *\/$/;"	m	struct:block_t
+rawdata_end	reader.h	/^   char * rawdata_end;            \/**< @brief Pointer to the memory location after the last read byte *\/$/;"	m	struct:block_t
+rawdata_size	reader.h	/^   size_t rawdata_size;           \/**< @brief Number of bytes read from file *\/$/;"	m	struct:block_t
+rcount	reader.c	/^unsigned int rcount = 0;$/;"	v
+read_fastq_block	reader.c	/^int read_fastq_block (struct block_t * block, FILE * fp)$/;"	f
+read_t	reader.h	/^struct read_t$/;"	s
+reads	async.h	/^   unsigned int reads;      \/**< @brief Number of reads in each block *\/$/;"	m	struct:blockinfo_t
+reads	reader.h	/^   struct read_t ** reads;        \/**< @brief Array of read_t structures *\/$/;"	m	struct:block_t	typeref:struct:block_t::read_t
+rev	async.h	/^   struct block_t * rev;    \/**< @brief Pointer to the reverse reads block *\/$/;"	m	struct:blockinfo_t	typeref:struct:blockinfo_t::block_t
+rewind_files	reader.c	/^void rewind_files (void)$/;"	f
+sc_eq	pear-flip.c	/^double sc_eq[256][256];$/;"	v
+sc_eq	pear-pt.c	/^double      sc_eq[256][256];$/;"	v
+sc_eq	pear.c	/^double      sc_eq[256][256];$/;"	v
+sc_eqA	pear-flip.c	/^double sc_eqA[256][256];$/;"	v
+sc_eqA	pear-pt.c	/^double     sc_eqA[256][256];$/;"	v
+sc_eqA	pear.c	/^double     sc_eqA[256][256];$/;"	v
+sc_eqC	pear-flip.c	/^double sc_eqC[256][256];$/;"	v
+sc_eqC	pear-pt.c	/^double     sc_eqC[256][256];$/;"	v
+sc_eqC	pear.c	/^double     sc_eqC[256][256];$/;"	v
+sc_eqG	pear-flip.c	/^double sc_eqG[256][256];$/;"	v
+sc_eqG	pear-pt.c	/^double     sc_eqG[256][256];$/;"	v
+sc_eqG	pear.c	/^double     sc_eqG[256][256];$/;"	v
+sc_eqT	pear-flip.c	/^double sc_eqT[256][256];$/;"	v
+sc_eqT	pear-pt.c	/^double     sc_eqT[256][256];$/;"	v
+sc_eqT	pear.c	/^double     sc_eqT[256][256];$/;"	v
+sc_neq	pear-flip.c	/^double sc_neq[256][256];$/;"	v
+sc_neq	pear-pt.c	/^double     sc_neq[256][256];$/;"	v
+sc_neq	pear.c	/^double     sc_neq[256][256];$/;"	v
+sc_neqAC	pear-flip.c	/^double sc_neqAC[256][256];$/;"	v
+sc_neqAC	pear-pt.c	/^double   sc_neqAC[256][256];$/;"	v
+sc_neqAC	pear.c	/^double   sc_neqAC[256][256];$/;"	v
+sc_neqAG	pear-flip.c	/^double sc_neqAG[256][256];$/;"	v
+sc_neqAG	pear-pt.c	/^double   sc_neqAG[256][256];$/;"	v
+sc_neqAG	pear.c	/^double   sc_neqAG[256][256];$/;"	v
+sc_neqAT	pear-flip.c	/^double sc_neqAT[256][256];$/;"	v
+sc_neqAT	pear-pt.c	/^double   sc_neqAT[256][256];$/;"	v
+sc_neqAT	pear.c	/^double   sc_neqAT[256][256];$/;"	v
+sc_neqCA	pear-flip.c	/^double sc_neqCA[256][256];$/;"	v
+sc_neqCA	pear.c	/^double   sc_neqCA[256][256];$/;"	v
+sc_neqCG	pear-flip.c	/^double sc_neqCG[256][256];$/;"	v
+sc_neqCG	pear-pt.c	/^double   sc_neqCG[256][256];$/;"	v
+sc_neqCG	pear.c	/^double   sc_neqCG[256][256];$/;"	v
+sc_neqCT	pear-flip.c	/^double sc_neqCT[256][256];$/;"	v
+sc_neqCT	pear-pt.c	/^double   sc_neqCT[256][256];$/;"	v
+sc_neqCT	pear.c	/^double   sc_neqCT[256][256];$/;"	v
+sc_neqGA	pear-flip.c	/^double sc_neqGA[256][256];$/;"	v
+sc_neqGA	pear.c	/^double   sc_neqGA[256][256];$/;"	v
+sc_neqGC	pear-flip.c	/^double sc_neqGC[256][256];$/;"	v
+sc_neqGC	pear.c	/^double   sc_neqGC[256][256];$/;"	v
+sc_neqGT	pear-flip.c	/^double sc_neqGT[256][256];$/;"	v
+sc_neqGT	pear-pt.c	/^double   sc_neqGT[256][256];$/;"	v
+sc_neqGT	pear.c	/^double   sc_neqGT[256][256];$/;"	v
+sc_neqTA	pear-flip.c	/^double sc_neqTA[256][256];$/;"	v
+sc_neqTA	pear.c	/^double   sc_neqTA[256][256];$/;"	v
+sc_neqTC	pear-flip.c	/^double sc_neqTC[256][256];$/;"	v
+sc_neqTC	pear.c	/^double   sc_neqTC[256][256];$/;"	v
+sc_neqTG	pear-flip.c	/^double sc_neqTG[256][256];$/;"	v
+sc_neqTG	pear.c	/^double   sc_neqTG[256][256];$/;"	v
+score	pear-flip.c	/^   double       score;$/;"	m	struct:dp_matrix	file:
+score_method	args.h	/^   int          score_method; \/**< @brief Scoring method to use *\/$/;"	m	struct:user_args
+scoring	pear-flip.c	/^scoring (char dleft, char dright, char qleft, char qright, int score_method, double * score, int match, int mismatch)$/;"	f
+scoring	pear-pt.c	/^scoring (char dleft, char dright, char qleft, char qright, int score_method, double * score, double * oes, int match, int mismatch)$/;"	f
+scoring	pear.c	/^scoring (char dleft, char dright, char qleft, char qright, int score_method, double * score, int match, int mismatch)$/;"	f
+scoring_ef	pear-flip.c	/^scoring_ef (char dleft, char dright, char qleft, char qright, int score_method, double * score, int match, int mismatch, struct emp_freq * ef)$/;"	f
+scoring_ef	pear-pt.c	/^scoring_ef (char dleft, char dright, char qleft, char qright, int score_method, double * score, double * oes, int match, int mismatch, struct emp_freq * ef)$/;"	f
+scoring_ef	pear.c	/^scoring_ef (char dleft, char dright, char qleft, char qright, int score_method, double * score, int match, int mismatch, struct emp_freq * ef)$/;"	f
+scoring_ef_nm	pear-pt.c	/^scoring_ef_nm (char dleft, char dright, char qleft, char qright, int score_method, double * score, double * oes, struct emp_freq * ef)$/;"	f
+scoring_nm	pear-pt.c	/^scoring_nm (char dleft, char dright, char qleft, char qright, int score_method, double * score, double * oes)$/;"	f
+start	async.h	/^   unsigned int start;         \/**< @brief Number of the first read to be processed by current thread *\/$/;"	m	struct:thread_local_t
+stat_test	statistics.c	/^stat_test (double pval, double f, int min_overlap, double q)$/;"	f
+stat_test2	statistics.c	/^int stat_test2 (double pval, double oes, int min_overlap, double q)$/;"	f
+sw	async.h	/^   struct user_args * sw;      \/**< @brief Parsed command-line arguments *\/$/;"	m	struct:thread_local_t	typeref:struct:thread_local_t::user_args
+test	args.h	/^   int          test;         \/**< @brief Test method *\/$/;"	m	struct:user_args
+thr_global	pear-pt.c	/^struct thread_global_t thr_global;$/;"	v	typeref:struct:thread_global_t
+thread_global_t	async.h	/^struct thread_global_t$/;"	s
+thread_local_t	async.h	/^struct thread_local_t$/;"	s
+threads	args.h	/^   int          threads;      \/**< @brief Number of threads to use *\/$/;"	m	struct:user_args
+threads	async.h	/^   unsigned int threads;    \/**< @brief Number of threads still operating with reads from this structure *\/$/;"	m	struct:blockinfo_t
+total	emp.h	/^   double total; \/**< @brief \\a freqa + \\a freqc + \\a freqg + \\a freqt *\/$/;"	m	struct:emp_freq
+trim	pear-flip.c	/^trim (struct read_t * read, int min_quality, int len, double * uncalled)$/;"	f
+trim	pear-pt.c	/^trim (struct read_t * read, int min_quality, double * uncalled)$/;"	f
+trim	pear.c	/^trim (struct read_t * read, int min_quality, int len, double * uncalled)$/;"	f
+trim_cpl	pear-flip.c	/^trim_cpl (struct read_t * read, int min_quality, int len, double * uncalled)$/;"	f
+trim_cpl	pear-pt.c	/^trim_cpl (struct read_t * read, int min_quality, double * uncalled)$/;"	f
+trim_cpl	pear.c	/^trim_cpl (struct read_t * read, int min_quality, int len, double * uncalled)$/;"	f
+unread	reader.h	/^   char * unread;                 \/**< @brief Pointer to rawdata, at the start of the incomplete read *\/$/;"	m	struct:block_t
+usage	args.c	/^void usage (void)$/;"	f
+user_args	args.h	/^struct user_args $/;"	s
+validate_input	pear-flip.c	/^validate_input (int nleft, int nright)$/;"	f
+validate_input	pear-pt.c	/^validate_input (int nleft, int nright)$/;"	f
+validate_input	pear.c	/^validate_input (int nleft, int nright)$/;"	f
+write_data	pear-pt.c	/^void write_data (struct read_t ** fwd, struct read_t ** rev, unsigned int elms, FILE ** fd)$/;"	f
+xblock	async.h	/^   struct blockinfo_t * xblock; \/**< @brief Pointer to the first \\a blockinfo_t buffer (main processing buffer) *\/$/;"	m	struct:thread_global_t	typeref:struct:thread_global_t::blockinfo_t
+yblock	async.h	/^   struct blockinfo_t * yblock; \/**< @brief Pointer to the second \\a blockinfo_t buffer (double-buffer) *\/$/;"	m	struct:thread_global_t	typeref:struct:thread_global_t::blockinfo_t

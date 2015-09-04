@@ -1,0 +1,84 @@
+Technical details:
+
+####################################################################
+This is a "package" called "viral_denovo_pipeline".  It includes:  
+i)"scripts" subdirectory with my code
+ii)"exec" subdirectory with the required executables
+iii) "blast_databases": some databases for the pathogens I have worked with. You will need to create your own if you work on a different pathogen.
+iv) An "example" subdirectory where there is a toy example for you to run so we can make sure the pipeline works works OK.
+
+
+The key main file is "scripts/Morfopoulou_pipeline_viral_LEGION_v4.sh". 
+
+If I did things right you should only need to change 3 things: 
+1) The main path to all the code - set it to your own home dir.
+Illumeta=/home/ucbtsmo/Projects/viral_denovo_pipeline
+
+2) The path to your local R library. I call the R that is installed on LEGION in the code, but you need to install two packages locally (install.packages("data.table") and install.packages("seqinr"). Take a note of the path for your local R library and set it as below:                                                                                                                                  
+R=/home/ucbtsmo/R/x86_64-unknown-linux-gnu-library/3.1/
+
+3) You will need to modify 2 paths for TrimGalore to work properly.
+i) Go to line 37 of "exec/trim_galore_0.3.7/trim_galore" and change the following line to point to your directory:
+my $path_to_cutadapt = '/YourPath/viral_denovo_pipeline/exec/cutadapt-1.7.1/bin/cutadapt';
+ii) Go to the 1st line of "exec/cutadapt-1.7.1/bin/cutadapt" and change it accordingly:
+#!/usr/bin/env /YourPath/viral_denovo_pipeline/exec/python-2.7.6/bin/python
+
+
+Everything else (executables...) should be included in the package I put together and there should be no need to modify any of the perl/R scripts that I wrote. At least this is the plan! 
+
+
+############# RUN THE EXAMPLE
+ "example_quick" takes 5 minutes to processs. It is a super small EBV dataset and therefore results are poor (seriously poor, coverage is around 12 and therefore consensus is full of gaps (NNs) and lower case letters) BUT it will give you an idea of what the various outputs are. 
+
+To run the example code: 
+1) cd into the "example_quick" folder and  change in the "submit_pipeline_example.sh" the first part of the full paths ("i.e /home/ucbtsmo/Projects") pointing to your own. 
+2) sh submit_pipeline_example.sh - this will submit the job to the queue. 
+
+It is important to go through the example to make sure everything works and to familiarise yourself with the outputs.*
+I guess the main things of interest are the consensus de novo assembled sequence ("assembly/*consensus.fa") and the variants  "/variants/variants.tab"
+
+*I barely remove any of my intermediate files because if something crashes during analysis, I want to be able to retrace my steps. But this is not sustainable in terms of storage space, so I guess at some point I will start removing some files.
+
+
+
+############### SANITY CHECK
+Before you start using the pipeline in batch mode for your data, please do analyse a couple of samples you have already analysed and therefore know what to expect more or less. 
+So we can make sure things are working as expected.
+
+
+############################################ GENERAL USE (assuming example has worked fine)
+########### PARAMETER SETTING
+In the your submission script you will be setting the parameters of the sample/job.
+instrument: Set is either as MiSeq / NextSeq / HiSeq.  This requests extra memory and time respectively (due to generally increasing data size).
+genome: set is as EBV (for EBV) / FLUA (for flua) / continuous (for VZV/Norovirus and any other pathogen of interest that does not have a segmented genome).
+nthreads: specify the number of processors for the multithreading jobs (I usually ask for 8 but 4-6 would work fine I suppose)
+
+PLUS location for blast databases, input raw fastq, working directory,  sample identifier (look at the example submission script).
+
+#### LOG FILES
+The directory "cluster" holds the error log files (cluster/error) and the out log files (cluster/error). 
+In cluster/submission the script that is actually submitted to the queue is printed (this is very useful for debugging! along with error logs, if things crash for some reason.)
+
+
+############# BLASTn DATABASES
+I have included the EBV and VZV blast databases in "databases/" .
+In there there is also the script ("makedb.sh") that takes a FASTA file and makes a blast database (in case you need build your own pathogen database or  rebuild an existingy database providing more genomes)
+
+
+In general you need: 
+(i) a blast database for your pathogen of choice with as many genomes as you see fit. This is used initially to retain all the reads that share similarity with the pathogen, for subsequent analysis. 
+(ii) a second blast database that has only one genome for your pathogen of choice. I use this to help me join the assembled contigs in an ordered fashion. e.g for VZV I used Dumas strain, for EBV the RefSeq Types I and II and so on.
+
+
+
+
+N########### NOTES
+The main issue that you may have is the quick alignment software. 
+I use novoalign and I specifically use a commercial version (that my previous PI has purchased so cannot share) that makes things faster. 
+The free academic version will be a bit slow a bit slow I expect (don't think it supports multi-threading without commercial licence). 
+BUT should be fairly easy to substitute with BWA or Bowtie, as I work with SAM/BAM .
+
+
+
+
+ENJOY :-)

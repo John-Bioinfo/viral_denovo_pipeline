@@ -1,0 +1,4 @@
+- left reads: [/cluster/project8/vyp/sofia/IlluMeta_new/exec/SPAdes-3.5.0-Linux/share/spades/test_dataset/ecoli_1K_1.fq.gz]
+  orientation: fr
+  right reads: [/cluster/project8/vyp/sofia/IlluMeta_new/exec/SPAdes-3.5.0-Linux/share/spades/test_dataset/ecoli_1K_2.fq.gz]
+  type: paired-end

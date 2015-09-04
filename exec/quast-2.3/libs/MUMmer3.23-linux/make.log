@@ -1,0 +1,130 @@
+make: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux'
+mkdir -p /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin
+cd /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz; make mummer
+make[1]: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz'
+cd libbasedir; make libbase.a
+make[2]: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz/libbasedir'
+/usr/bin/gcc -O3   -c -o cleanMUMcand.o cleanMUMcand.c
+/usr/bin/gcc -O3   -c -o clock.o clock.c
+/usr/bin/gcc -O3   -c -o mapfile.o mapfile.c
+/usr/bin/gcc -O3   -c -o multiseq.o multiseq.c
+/usr/bin/gcc -O3   -c -o procopt.o procopt.c
+/usr/bin/gcc -O3   -c -o safescpy.o safescpy.c
+/usr/bin/gcc -O3   -c -o seterror.o seterror.c
+/usr/bin/gcc -O3   -c -o space.o space.c
+ar sruv libbase.a cleanMUMcand.o clock.o mapfile.o multiseq.o procopt.o safescpy.o seterror.o space.o
+a - cleanMUMcand.o
+a - clock.o
+a - mapfile.o
+a - multiseq.o
+a - procopt.o
+a - safescpy.o
+a - seterror.o
+a - space.o
+make[2]: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz/libbasedir'
+cd streesrc; make libstree.a
+make[2]: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz/streesrc'
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o construct.o construct.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o access.o access.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o scanpref.o scanpref.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o linkloc.o linkloc.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o depthtab.o depthtab.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o ex2leav.o ex2leav.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o dfs.o dfs.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o overmax.o overmax.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o oversucc.o oversucc.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o addleafcount.o addleafcount.c
+/usr/bin/gcc -O3 -I../libbasedir -DSTREEHUGE   -c -o iterator.o iterator.c
+ar sruv libstree.a construct.o access.o scanpref.o linkloc.o depthtab.o ex2leav.o dfs.o overmax.o oversucc.o addleafcount.o iterator.o
+a - construct.o
+a - access.o
+a - scanpref.o
+a - linkloc.o
+a - depthtab.o
+a - ex2leav.o
+a - dfs.o
+a - overmax.o
+a - oversucc.o
+a - addleafcount.o
+a - iterator.o
+make[2]: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz/streesrc'
+cd mm3src; make mummer
+make[2]: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz/mm3src'
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o maxmat3.o maxmat3.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o maxmatopt.o maxmatopt.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o maxmatinp.o maxmatinp.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o findmumcand.o findmumcand.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o findmaxmat.o findmaxmat.c
+/usr/bin/gcc -O3 -I../libbasedir -I../streesrc   -c -o procmaxmat.o procmaxmat.c
+/usr/bin/gcc  maxmat3.o maxmatopt.o maxmatinp.o findmumcand.o findmaxmat.o procmaxmat.o ../streesrc/libstree.a ../libbasedir/libbase.a \
+	-o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mummer; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mummer
+make[2]: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz/mm3src'
+make[1]: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/kurtz'
+cd /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/tigr; make all
+make[1]: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/tigr'
+/usr/bin/g++ -O3  tigrinc.cc -c -o tigrinc.o
+/usr/bin/g++ -O3  annotate.cc tigrinc.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/annotate; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/annotate
+/usr/bin/g++ -O3  combineMUMs.cc tigrinc.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/combineMUMs; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/combineMUMs
+/usr/bin/g++ -O3  delta.cc -c -o delta.o
+/usr/bin/g++ -O3  delta-filter.cc tigrinc.o delta.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/delta-filter; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/delta-filter
+/usr/bin/g++ -O3  gaps.cc tigrinc.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/gaps; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/gaps
+/usr/bin/g++ -O3  mgaps.cc tigrinc.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mgaps; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mgaps
+/usr/bin/g++ -O3  sw_align.cc -c -o sw_align.o
+/usr/bin/g++ -O3  postnuc.cc tigrinc.o sw_align.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/postnuc; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/postnuc
+/usr/bin/g++ -O3  translate.cc -c -o translate.o
+/usr/bin/g++ -O3  postpro.cc tigrinc.o sw_align.o translate.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/postpro; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/postpro
+/usr/bin/g++ -O3  prenuc.cc tigrinc.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/prenuc; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/prenuc
+/usr/bin/g++ -O3  prepro.cc tigrinc.o translate.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/prepro; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin/prepro
+/usr/bin/g++ -O3  repeat-match.cc tigrinc.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/repeat-match; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/repeat-match
+/usr/bin/g++ -O3  show-aligns.cc tigrinc.o translate.o delta.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-aligns; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-aligns
+/usr/bin/g++ -O3  show-coords.cc tigrinc.o delta.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-coords; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-coords
+/usr/bin/g++ -O3  show-tiling.cc tigrinc.o delta.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-tiling; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-tiling
+/usr/bin/g++ -O3  show-snps.cc tigrinc.o translate.o delta.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-snps; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-snps
+/usr/bin/g++ -O3  show-diff.cc tigrinc.o delta.o -o /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-diff; chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/show-diff
+make[1]: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/src/tigr'
+cd /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts; make all
+make[1]: Entering directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts'
+/bin/sed  -e 's?__CSH_PATH?/bin/csh?g' \
+		-e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+		-e 's?__SCRIPT_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts?g' \
+		exact-tandems.csh > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/exact-tandems
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/exact-tandems
+/bin/sed  -e 's?__PERL_PATH?/usr/bin/perl?g' \
+		-e 's?__SCRIPT_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts?g' \
+                mapview.pl > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mapview
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mapview
+/bin/sed  -e 's?__PERL_PATH?/usr/bin/perl?g' \
+                -e 's?__SCRIPT_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts?g' \
+                -e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+                mummerplot.pl > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mummerplot
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/mummerplot
+/bin/sed  -e 's?__PERL_PATH?/usr/bin/perl?g' \
+                -e 's?__SCRIPT_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts?g' \
+                -e 's?__AUX_BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin?g' \
+                -e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+                 nucmer.pl > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/nucmer
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/nucmer
+/bin/sed  -e 's?__PERL_PATH?/usr/bin/perl?g' \
+                -e 's?__SCRIPT_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts?g' \
+                -e 's?__AUX_BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/aux_bin?g' \
+                -e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+                promer.pl > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/promer
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/promer
+/bin/sed  -e 's?__CSH_PATH?/bin/csh?g' \
+		-e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+		run-mummer1.csh > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/run-mummer1
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/run-mummer1
+/bin/sed  -e 's?__CSH_PATH?/bin/csh?g' \
+		-e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+		run-mummer3.csh > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/run-mummer3
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/run-mummer3
+/bin/sed  -e 's?__PERL_PATH?/usr/bin/perl?g' \
+		nucmer2xfig.pl > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/nucmer2xfig
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/nucmer2xfig
+/bin/sed -e 's?__PERL_PATH?/usr/bin/perl?g' \
+               -e 's?__SCRIPT_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts?g' \
+               -e 's?__BIN_DIR?/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux?g' \
+                 dnadiff.pl > /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/dnadiff
+chmod 755 /cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/dnadiff
+make[1]: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux/scripts'
+make: Leaving directory `/cluster/project8/vyp/sofia/IlluMeta_new/exec/quast-2.3/libs/MUMmer3.23-linux'
