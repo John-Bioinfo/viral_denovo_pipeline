@@ -508,9 +508,9 @@ ${samtools} sort ${output_variants}/${sample}.bam ${output_variants}/${sample}_s
 
 ${samtools} index  ${output_variants}/${sample}_sorted.bam                                                                                                          
 
-${samtools} mpileup -f  ${output_assembly}/${sample}.consensus.fa   ${output_variants}/${sample}_sorted.bam   > ${output_variants}/${sample}.pileup
+${samtools} mpileup -A -f  ${output_assembly}/${sample}.consensus.fa   ${output_variants}/${sample}_sorted.bam   > ${output_variants}/${sample}.pileup
 
-java -Xmx1000m -jar ${varscan} pileup2cns ${output_variants}/${sample}.pileup  --min-reads2 6 --min-avg-qual 30 --min-var-freq 0.02 --variants 1 --p-value 0.01  > ${output_variants}/variants.tab
+java -Xmx1000m -jar ${varscan} pileup2cns ${output_variants}/${sample}.pileup  --min-reads2 5 --min-avg-qual 30 --min-var-freq 0.02 --variants 1 --p-value 0.01  > ${output_variants}/variants.tab
 
 ${samtools} depth ${output_variants}/${sample}_sorted.bam  |   awk '{sum+=\$3;count++}END{print \"Average = \"sum/count, \"\nTotal = \"sum}' > ${output_variants}/coverageSAMTOOLS.stats
 
@@ -670,9 +670,9 @@ ${samtools} sort  ${output_assembly}/${sample}.bam ${output_assembly}/${sample}_
 
 ${samtools} index  ${output_assembly}/${sample}_sorted.bam                                                                                                          
 
-${samtools} mpileup -f  ${output_assembly}/segments.fasta   ${output_assembly}/${sample}_sorted.bam   > ${output_assembly}/${sample}.pileup   
+${samtools} mpileup -A -f  ${output_assembly}/segments.fasta   ${output_assembly}/${sample}_sorted.bam   > ${output_assembly}/${sample}.pileup   
 
-${samtools} mpileup -uf ${output_assembly}/segments.fasta ${output_assembly}/${sample}_sorted.bam | ${bcftools} view -cg - | ${vcfutils} vcf2fq > ${output_assembly}/consensus.fastq                        
+${samtools} mpileup -A -uf ${output_assembly}/segments.fasta ${output_assembly}/${sample}_sorted.bam | ${bcftools} view -cg - | ${vcfutils} vcf2fq > ${output_assembly}/consensus.fastq                        
 ${seqtk} seq -a ${output_assembly}/consensus.fastq > ${output_assembly}/${sample}.consensus.fa                                                                                                                     
 
 
@@ -707,7 +707,7 @@ ${samtools} sort -m 1000000000 ${output_variants}/${sample}.bam ${output_variant
 
 ${samtools} index  ${output_variants}/${sample}_sorted.bam                                                                                                          
 
-${samtools} mpileup -f  ${output_assembly}/${sample}.consensus.fa   ${output_variants}/${sample}_sorted.bam   > ${output_variants}/${sample}.pileup
+${samtools} mpileup -A -f  ${output_assembly}/${sample}.consensus.fa   ${output_variants}/${sample}_sorted.bam   > ${output_variants}/${sample}.pileup
 
 java -Xmx1000m -jar ${varscan} pileup2cns ${output_variants}/${sample}.pileup  --min-reads2 6 --min-avg-qual 30 --min-var-freq 0.02 --variants 1 --p-value 0.01  > ${output_variants}/variants.tab
 
@@ -828,9 +828,9 @@ ${samtools} sort  ${output_assembly}/${sample}.bam ${output_assembly}/${sample}_
 
 ${samtools} index  ${output_assembly}/${sample}_sorted.bam                                                                                                          
 
-${samtools} mpileup -f  ${output_assembly}/pseudogenome.fasta   ${output_assembly}/${sample}_sorted.bam   > ${output_assembly}/${sample}.pileup   
+${samtools} mpileup -A -f  ${output_assembly}/pseudogenome.fasta   ${output_assembly}/${sample}_sorted.bam   > ${output_assembly}/${sample}.pileup   
 
-${samtools} mpileup -E -uf ${output_assembly}/pseudogenome.fasta ${output_assembly}/${sample}_sorted.bam | ${bcftools} view -cg - | ${vcfutils} vcf2fq > ${output_assembly}/consensus.fastq                 
+${samtools} mpileup -A -E -uf ${output_assembly}/pseudogenome.fasta ${output_assembly}/${sample}_sorted.bam | ${bcftools} view -cg - | ${vcfutils} vcf2fq > ${output_assembly}/consensus.fastq                 
 
 ${seqtk} seq -a ${output_assembly}/consensus.fastq > ${output_assembly}/${sample}.consensus.fa                                                                                                                     
 
@@ -862,7 +862,7 @@ ${samtools} sort ${output_variants}/${sample}.bam ${output_variants}/${sample}_s
 
 ${samtools} index  ${output_variants}/${sample}_sorted.bam                                                                                                          
 
-${samtools} mpileup -f  ${output_assembly}/${sample}.consensus.fa   ${output_variants}/${sample}_sorted.bam   > ${output_variants}/${sample}.pileup
+${samtools} mpileup -A -f  ${output_assembly}/${sample}.consensus.fa   ${output_variants}/${sample}_sorted.bam   > ${output_variants}/${sample}.pileup
 
 java -Xmx1000m -jar ${varscan} pileup2cns ${output_variants}/${sample}.pileup  --min-reads2 6 --min-avg-qual 30 --min-var-freq 0.02 --variants 1 --p-value 0.01  > ${output_variants}/variants.tab
 
