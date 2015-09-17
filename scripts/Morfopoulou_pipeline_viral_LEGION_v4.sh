@@ -142,7 +142,7 @@ done
 
 ###change the time depending on the size of dataset
 
-
+ 
  if [[ "$type" == "MiSeq" ]]; then
 
      printf "#$ -l h_rt=02:30:00
@@ -150,7 +150,6 @@ done
 #$ -l mem=1.9G
 #$ -N viral_denovo_pipeline
 #$ -wd  ${output}
-#$  -P user
 
 cd \$TMPDIR
 
@@ -187,6 +186,7 @@ module unload compilers/intel/11.1/072
 module unload mpi/qlogic/1.2.7/intel
 module unload mkl/10.2.5/035
 module load recommended/r
+export R_LIBS=${R}:$R_LIBS
 
 " >> $script
 
@@ -214,6 +214,7 @@ module unload compilers/intel/11.1/072
 module unload mpi/qlogic/1.2.7/intel
 module unload mkl/10.2.5/035
 module load recommended/r
+export R_LIBS=${R}:$R_LIBS
 
 " >> $script
 
