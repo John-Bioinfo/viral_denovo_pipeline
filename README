@@ -8,7 +8,7 @@ iii) "blast_databases": some databases for the pathogens I have worked with. You
 iv) An "example" subdirectory where there is a toy example for you to run so we can make sure the pipeline works works OK.
 
 
-The key main file is "scripts/Morfopoulou_pipeline_viral_LEGION_v4.sh". 
+The key main file is "scripts/Morfopoulou_pipeline_viral_LEGION_v5.sh". 
 
 If I did things right you should only need to change 3 things: 
 1) The main path to all the code - set it to your own home dir.
@@ -28,7 +28,7 @@ Everything else (executables...) should be included in the package I put togethe
 
 
 ############# RUN THE EXAMPLE
- "example_quick" takes 5 minutes to processs. It is a super small EBV dataset and therefore results are poor (seriously poor, coverage is around 12 and therefore consensus is full of gaps (NNs) and lower case letters) BUT it will give you an idea of what the various outputs are. 
+ "example_quick" takes 5 minutes to processs. It is a super small EBV dataset and therefore results are poor (seriously poor, coverage is around 9 and therefore consensus is full of gaps (NNs) and lower case letters) BUT it will give you an idea of what the various outputs are. 
 
 To run the example code: 
 1) cd into the "example_quick" folder and  change in the "submit_pipeline_example.sh" the first part of the full paths ("i.e /home/ucbtsmo/Projects") pointing to your own. 
@@ -49,11 +49,19 @@ So we can make sure things are working as expected.
 ############################################ GENERAL USE (assuming example has worked fine)
 ########### PARAMETER SETTING
 In the your submission script you will be setting the parameters of the sample/job.
-instrument: Set is either as MiSeq / NextSeq / HiSeq.  This requests extra memory and time respectively (due to generally increasing data size).
-genome: set is as EBV (for EBV) / FLUA (for flua) / continuous (for VZV/Norovirus and any other pathogen of interest that does not have a segmented genome).
-nthreads: specify the number of processors for the multithreading jobs (I usually ask for 8 but 4-6 would work fine I suppose)
+1) instrument: Set is either as MiSeq / NextSeq / HiSeq.  This requests extra memory and time respectively (due to generally increasing data size).
 
-PLUS location for blast databases, input raw fastq, working directory,  sample identifier (look at the example submission script).
+2) collapseLev: Set is as 225 or 135 or 72  - it depends on your read length and the percentage of identity you want to allow during collapsing. 
+The very first step of the job is to collapse pairs that have identical sequences. 
+I allow for some differences in the 3' end due to higher probability of sequencing errors. 
+I typically ask that the first 90% of the nucleotides are identical in order to collpase (i.e allow variation in the last 10%), but you can change this as you wish. 
+Therefore when read length is 250, I set in the submission script "collapseLev=225" (i.e for MiSeq: 225/250=0.9) , when read length is 150 I set "collapseLev=135" (NextSeq/HiSeq: 135/150=0.9) and lastly when read length is 80 I set "collapseLev=72"
+
+3) genome: set is as FLUA (for flua) / continuous (for EBV or VZV or Norovirus and any other pathogen of interest that does not have a segmented genome).
+
+4) nthreads: specify the number of processors for the multithreading jobs (I usually ask for 8 but 4-6 would work fine)
+
+5) PLUS location for blast databases, input raw fastq, working directory,  sample identifier (look at the example submission script).
 
 #### LOG FILES
 The directory "cluster" holds the error log files (cluster/error) and the out log files (cluster/error). 
@@ -67,7 +75,7 @@ In there there is also the script ("makedb.sh") that takes a FASTA file and make
 
 In general you need: 
 (i) a blast database for your pathogen of choice with as many genomes as you see fit. This is used initially to retain all the reads that share similarity with the pathogen, for subsequent analysis. 
-(ii) a second blast database that has only one genome for your pathogen of choice. I use this to help me join the assembled contigs in an ordered fashion. e.g for VZV I used Dumas strain, for EBV the RefSeq Types I and II and so on.
+(ii) a second blast database that has only one genome for your pathogen of choice. I use this to help me join the assembled contigs in an ordered fashion. e.g for VZV I used Dumas strain, for EBV the RefSeq Type I.
 
 
 
@@ -82,3 +90,7 @@ BUT should be fairly easy to substitute with BWA or Bowtie, as I work with SAM/B
 
 
 ENJOY :-)
+
+
+
+
