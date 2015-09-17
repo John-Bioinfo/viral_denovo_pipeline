@@ -23,6 +23,7 @@ my $path_to_cutadapt = '/YourPath/viral_denovo_pipeline/exec/cutadapt-1.7.1/bin/
 ii) Go to the 1st line of "exec/cutadapt-1.7.1/bin/cutadapt" and change it accordingly:
 #!/usr/bin/env /YourPath/viral_denovo_pipeline/exec/python-2.7.6/bin/python
 
+(Optional 4: The memory and time in the job header. I think what I have there should work OK in general, but you know your datasets better, so ask more/less according to your specifications)
 
 Everything else (executables...) should be included in the package I put together and there should be no need to modify any of the perl/R scripts that I wrote. At least this is the plan! 
 
